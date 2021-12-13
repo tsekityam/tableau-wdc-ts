@@ -1,7 +1,7 @@
 // Type definitions for tableauwdc 2.2
 // Project: https://github.com/tableau/webdataconnector
 // Definitions by: Tse Kit Yam <https://github.com/tsekityam>
-// Definitions: https://github.com/tsekityam/tableau-wdc-typed
+// Definitions: https://github.com/tsekityam/tableauwdc-typed
 
 type ColumnInfo = {
   aggType?: aggTypeEnum;
