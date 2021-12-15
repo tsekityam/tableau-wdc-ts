@@ -102,7 +102,7 @@ declare namespace tableau {
 
   const dataTypeEnum: {
     bool: dataTypeEnum.bool;
-    date: dataTypeEnum.bool;
+    date: dataTypeEnum.date;
     datetime: dataTypeEnum.datetime;
     float: dataTypeEnum.float;
     geometry: dataTypeEnum.geometry;
