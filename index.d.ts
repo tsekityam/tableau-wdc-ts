@@ -1,7 +1,7 @@
 // Type definitions for tableauwdc 2.2
 // Project: https://github.com/tableau/webdataconnector
 // Definitions by: Tse Kit Yam <https://github.com/tsekityam>
-// Definitions: https://github.com/tsekityam/tableauwdc-typed
+// Definitions: https://github.com/tsekityam/tableauwdc-types
 
 type ColumnInfo = {
   aggType?: aggTypeEnum;
@@ -24,7 +24,7 @@ type InitCallback = () => void;
 
 type SchemaCallback = (
   tables: Array<TableInfo>,
-  connections?: Array<StandardConnection>,
+  connections?: Array<StandardConnection>
 ) => void;
 
 type ShutdownCallback = () => void;
@@ -44,14 +44,14 @@ type StandardConnection = {
       tableAlias: string;
       columnId: string;
     };
-    joinType: 'inner' | 'left';
+    joinType: "inner" | "left";
   }[];
 };
 
 type Table = {
   incrementValue: string;
   tableInfo: TableInfo;
-  appendRows(rows: Array<Array<any> | any>): any;
+  appendRows(rows: Array<any>): any;
 };
 
 type TableInfo = {
@@ -60,7 +60,7 @@ type TableInfo = {
   description?: string;
   id: string;
   incrementColumnId?: string;
-  joinOnly?: bool;
+  joinOnly?: boolean;
 };
 
 type WebDataConnector = {
@@ -87,7 +87,7 @@ declare namespace tableau {
   const authTypeEnum: {
     basic: authTypeEnum.basic;
     custom: authTypeEnum.custom;
-    none: authTypeEnumnone;
+    none: authTypeEnum.none;
   };
 
   const columnRoleEnum: {
@@ -152,19 +152,19 @@ declare namespace tableau {
     thousands: unitsFormatEnum.thousands;
   };
 
-  const authPurpose: authPurposeEnum;
+  let authPurpose: authPurposeEnum;
   let authType: authTypeEnum;
   let connectionData: string;
   let connectionName: string;
-  const locale: localeEnum;
+  let locale: localeEnum;
   let password: any;
-  const phase: phaseEnum;
-  const platformBuildNumber: string;
-  const platformEdition: string;
-  const platformOs: "win" | "mac";
-  const platformVersion: string;
-  const username: string;
-  const version: string;
+  let phase: phaseEnum;
+  let platformBuildNumber: string;
+  let platformEdition: string;
+  let platformOs: "win" | "mac";
+  let platformVersion: string;
+  let username: string;
+  let version: string;
   const abortForAuth: (errorMessage: string) => void;
   const abortWithError: (errorMessage: string) => void;
   const enableCookiePersistence: () => void;
@@ -175,83 +175,83 @@ declare namespace tableau {
   const submit: () => void;
 }
 
-enum aggTypeEnum {
-  avg = 'avg',
-  count = 'count',
-  count_dist = 'count_dist',
-  median = 'median',
-  sum = 'sum',
+declare enum aggTypeEnum {
+  avg = "avg",
+  count = "count",
+  count_dist = "count_dist",
+  median = "median",
+  sum = "sum",
 }
 
-enum authPurposeEnum {
-  enduring = 'enduring',
-  ephemeral = 'ephemeral',
+declare enum authPurposeEnum {
+  enduring = "enduring",
+  ephemeral = "ephemeral",
 }
 
-enum authTypeEnum {
-  basic = 'basic',
-  custom = 'custom',
-  none = 'none',
+declare enum authTypeEnum {
+  basic = "basic",
+  custom = "custom",
+  none = "none",
 }
 
-enum columnRoleEnum {
-  dimension = 'dimension',
-  measure = 'measure',
+declare enum columnRoleEnum {
+  dimension = "dimension",
+  measure = "measure",
 }
 
-enum columnTypeEnum {
-  continuous = 'continuous',
-  discrete = 'discrete',
+declare enum columnTypeEnum {
+  continuous = "continuous",
+  discrete = "discrete",
 }
 
-enum dataTypeEnum {
-  bool = 'bool',
-  date = 'date',
-  datetime = 'datetime',
-  float = 'float',
-  geometry = 'geometry',
-  int = 'int',
-  string = 'string',
+declare enum dataTypeEnum {
+  bool = "bool",
+  date = "date",
+  datetime = "datetime",
+  float = "float",
+  geometry = "geometry",
+  int = "int",
+  string = "string",
 }
 
-enum geographicRoleEnum {
-  area_code = 'area_code',
-  cbsa_msa = 'cbsa_msa',
-  city = 'city',
-  congressional_district = 'congressional_district',
-  country_region = 'country_region',
-  county = 'county',
-  state_province = 'state_province',
-  zip_code_postcode = 'zip_code_postcode',
+declare enum geographicRoleEnum {
+  area_code = "area_code",
+  cbsa_msa = "cbsa_msa",
+  city = "city",
+  congressional_district = "congressional_district",
+  country_region = "country_region",
+  county = "county",
+  state_province = "state_province",
+  zip_code_postcode = "zip_code_postcode",
 }
 
-enum localeEnum {
-  america = 'en-us',
-  brazil = 'pt-br',
-  china = 'zh-cn',
-  france = 'fr-fr',
-  germany = 'de-de',
-  japan = 'ja-jp',
-  korea = 'ko-kr',
-  spain = 'es-es',
+declare enum localeEnum {
+  america = "en-us",
+  brazil = "pt-br",
+  china = "zh-cn",
+  france = "fr-fr",
+  germany = "de-de",
+  japan = "ja-jp",
+  korea = "ko-kr",
+  spain = "es-es",
 }
 
-enum numberFormatEnum {
-  currency = 'currency',
-  number = 'number',
-  percentage = 'percentage',
-  scientific = 'scientific',
+declare enum numberFormatEnum {
+  currency = "currency",
+  number = "number",
+  percentage = "percentage",
+  scientific = "scientific",
 }
 
-enum phaseEnum {
-  authPhase = 'authPhase',
-  gatherDataPhase = 'gatherDataPhase',
-  interactivePhase = 'interactivePhase',
+declare enum phaseEnum {
+  authPhase = "authPhase",
+  gatherDataPhase = "gatherDataPhase",
+  interactivePhase = "interactivePhase",
 }
 
-enum unitsFormatEnum {
-  billions_english = 'billions_english',
-  billions_standard = 'billions_standard',
-  millions = 'millions',
-  thousands = 'thousands',
+declare enum unitsFormatEnum {
+  billions_english = "billions_english",
+  billions_standard = "billions_standard",
+  millions = "millions",
+  thousands = "thousands",
 }
