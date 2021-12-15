@@ -5,5 +5,10 @@
   "types": "index.d.ts",
   "repository": "https://github.com/tsekityam/tableauwdc-types.git",
   "author": "Tse Kit Yam <tsekityam@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jquery": "^3.5.10",
+    "@types/js-cookie": "^3.0.1"
+  },
+  "dependencies": {}
 }
